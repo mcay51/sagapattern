@@ -27,9 +27,9 @@ Her bir servis, kendi bağımsız veritabanına sahip olup, mikroservisler aras�
 
 Projede **PostgreSQL** veritabanı kullanılmıştır. Her mikroservisin kendi veritabanı vardır ve bu veritabanları Spring Data JPA ile yönetilmektedir. Aşağıda her bir mikroservise ait temel tablolar bulunmaktadır:
 
-- **Order Service**: Sipariş bilgilerini tutan `orders` tablosu.
+- **Order Service**: Sipariş bilgilerini tutan `order` tablosu.
 - **Inventory Service**: Ürün stok bilgilerini içeren `inventory` tablosu.
-- **Payment Service**: Ödeme bilgilerini tutan `payments` tablosu.
+- **Payment Service**: Ödeme bilgilerini tutan `payment` tablosu.
 
 ## Kurulum ve Çalıştırma
 
@@ -57,7 +57,7 @@ docker run -d -p 8081:8081 order-service
 ```bash
 docker run --name <CONTAINER_ADI> -e POSTGRES_PASSWORD=<ROOT_PAROLASI> -d -p 5432:5432 -v <HOST'TA_HERHANGI_BIR_DIZIN>:/var/lib/postgresql/data  postgres
  ```
-4 - Mikroservisleri başlattıktan sonra, RabbitMQ mesajlaşma sistemini kurun ve her bir servisin RabbitMQ'ya bağlandığından emin olun.
+4 - Mikroservisleri başlatmadan önce, RabbitMQ mesajlaşma sistemini kurun ve her bir servisin RabbitMQ'ya bağlandığından emin olun.
 
 5 - Uygulamayı çalıştırdıktan sonra, servislere aşağıdaki URL'ler üzerinden erişebilirsiniz:
 
